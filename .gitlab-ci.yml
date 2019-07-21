@@ -32,7 +32,7 @@ eslint:
     # Configure ESLint (will read your .eslintrc file)
     #- eslint --init
     # Run ESLint
-    - eslint ./app/*
+    - eslint ./*
 
 testing_testing:
   stage: test
