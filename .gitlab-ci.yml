@@ -29,8 +29,10 @@ eslint:
   script:
     # Install ESLint in this docker container
     - npm install -g eslint
+    # Configure ESLint (will read your .eslintrc file)
+    #- eslint --init
     # Run ESLint
-    - eslint ./*
+    - eslint ./controllers/* ./routes/* ./test/*
 
 testing_testing:
   stage: test
