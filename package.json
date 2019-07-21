@@ -1,0 +1,31 @@
+{
+  "name": "pdf-generator",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "NODE_ENV=test mocha --timeout 10000",
+    "local-test": "NODE_ENV=local-test mocha --timeout 10000",
+    "coverage": "NODE_ENV=test nyc --reporter=text mocha --timeout 10000",
+    "format": "prettier-standard './**/*.js' './**/*.jsx' 'server/**/*.js'"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "chai-fs": "^2.0.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "lint-staged": "^9.2.0",
+    "morgan": "~1.9.1",
+    "nock": "^10.0.6",
+    "nodemon": "^1.19.1",
+    "pdfkit": "^0.10.0",
+    "prettier-standard": "^9.1.1",
+    "pug": "2.0.0-beta11",
+    "supertest": "^4.0.2"
+  },
+  "devDependencies": {
+    "chai-files": "^1.4.0"
+  }
+}

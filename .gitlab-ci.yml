@@ -1,0 +1,63 @@
+image: node:latest
+
+stages:
+  - build
+  - format
+  - lint
+  - test
+  - push_to_heroku
+
+cache:
+  paths:
+    - node_modules/
+
+install_dependencies:
+  stage: build
+  script:
+    - npm install
+  artifacts:
+    paths:
+      - node_modules/
+formating:
+  stage: format
+  script:
+    - npm install -g husky lint-staged
+    - npm run format
+
+eslint:
+  stage: lint
+  script:
+    # Install ESLint in this docker container
+    - npm install -g eslint
+    # Configure ESLint (will read your .eslintrc file)
+    #- eslint --init
+    # Run ESLint
+    - eslint ./app/*
+
+testing_testing:
+  stage: test
+  script:
+    - npm install -g nyc
+    - npm test
+    - npm run coverage
+    - mv .nyc_output/ coverage/
+  coverage: /All files\s*\|\s*([\d\.]+)/
+  artifacts:
+      paths:
+      - coverage/
+
+deploy:
+  stage: push_to_heroku
+  only:
+      - release
+
+  variables:
+    publication_branch_name: "application-form-react"
+
+  script:
+  - git config user.email "senth542002@gmail.com"
+  - git config user.name "GitLab CI on behalf of Senthil Kumar"
+  - apt-get update
+  - apt-get --yes --force-yes install rubygems
+  - gem install dpl
+  - dpl --provider=heroku --app=$publication_branch_name --api-key=$HEROKU_API_KEY
