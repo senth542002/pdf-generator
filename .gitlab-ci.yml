@@ -52,7 +52,7 @@ deploy:
       - release
 
   variables:
-    publication_branch_name: "application-form-react"
+    publication_branch_name: "pdf-generater"
 
   script:
   - git config user.email "senth542002@gmail.com"
