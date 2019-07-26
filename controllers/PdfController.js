@@ -9,7 +9,6 @@ module.exports = {
     res.status(201)
     fs.readFile(path.resolve(__dirname, '../output.pdf'), function (err, data) {
       console.log('Sending back pdf document')
-      console.log('Data:' + data)
       console.log('Data Length:'+ data.length);
       res.setHeader(
         'Content-disposition',
