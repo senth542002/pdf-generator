@@ -5,7 +5,13 @@ var path = require('path')
 
 module.exports = {
   generate (student) {
-    console.log('inside generate method' + student.name)
+    console.log('inside generate method')
+    console.log(student.name);
+    console.log(student.fatherName);
+    console.log(student.motherName);
+    console.log(student.email);
+    console.log(student.mobileNumber);
+    console.log(student.dateOfBirth);
     const doc = new PDFDocument()
     console.log(
       'Current Directory:' +
