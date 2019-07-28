@@ -13,7 +13,7 @@ module.exports = {
       console.log('File Data:'+ data);
       res.setHeader(
         'Content-disposition',
-        'inline; filename="ApplicationForm.pdf"'
+        'attachment; filename="ApplicationForm.pdf"'
       )
       res.contentType('application/pdf')
       res.sendFile(path.resolve(__dirname, '../output.pdf'))
