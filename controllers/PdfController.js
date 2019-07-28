@@ -11,6 +11,7 @@ module.exports = {
     fs.readFile(path.resolve(__dirname, '../output.pdf'), function (err, data) {
       console.log('Sending back pdf document')
       console.log('File Data:'+ data);
+      res.setHeader("X-Suggested-Filename", 'ApplicationForm.pdf')
       res.setHeader(
         'Content-disposition',
         'attachment; filename="ApplicationForm.pdf"'
