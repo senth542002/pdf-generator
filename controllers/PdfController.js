@@ -5,9 +5,9 @@ var path = require('path')
 
 module.exports = {
   generate (req, res) {
-    let pdfDoc = pdfGenerator.generate(req.body)
+    let pdfDoc = pdfGenerator.generate(req.params)
     console.log("PDFDoc:"+pdfDoc.data);
-    res.status(201)
+    res.status(200)
     fs.readFile(path.resolve(__dirname, '../output.pdf'), function (err, data) {
       console.log('Sending back pdf document')
       console.log('File Data:'+ data);

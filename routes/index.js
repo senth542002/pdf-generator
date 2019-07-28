@@ -6,6 +6,6 @@ const pdfController = require('../controllers/PdfController')
 router.get('/', (req, res, next) => {
   res.send({ message: 'Welcome to the PdfGenerator Service!' })
 })
-router.post('/api/generate', pdfController.generate)
+router.get('/api/generate', pdfController.generate)
 
 module.exports = router
