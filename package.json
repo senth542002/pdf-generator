@@ -25,6 +25,7 @@
     "pdfkit": "^0.10.0",
     "prettier-standard": "^9.1.1",
     "pug": "2.0.0-beta11",
+    "react-pdf": "^4.1.0",
     "supertest": "^4.0.2"
   },
   "devDependencies": {

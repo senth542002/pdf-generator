@@ -5,7 +5,14 @@ var path = require('path')
 
 module.exports = {
   generate (student) {
-    console.log('inside generate method' + student.name)
+    console.log('inside generate method')
+    console.log(student.applicationNumber)
+    console.log(student.name);
+    console.log(student.fatherName);
+    console.log(student.motherName);
+    console.log(student.email);
+    console.log(student.mobileNumber);
+    console.log(student.dateOfBirth);
     const doc = new PDFDocument()
     console.log(
       'Current Directory:' +
@@ -16,16 +23,14 @@ module.exports = {
     if (!student) {
       return doc
     }
-    doc.fontSize(35).text('Application Form', 100, 100)
-    doc
-      .font('Times-Bold')
-      .fontSize(25)
-      .text('Student Name: ' + student.name, 50, 150)
-    doc.fontSize(25).text('Father Name: ' + student.fatherName, 50, 200)
-    doc.fontSize(25).text('Mother Name: ' + student.motherName, 50, 250)
-    doc.fontSize(25).text('Email: ' + student.email, 50, 300)
-    doc.fontSize(25).text('MobileNumber: ' + student.mobileNumber, 50, 350)
-    doc.fontSize(25).text('Date Of Birth: ' + student.dateOfBirth, 50, 400)
+    doc.font('Times-Bold').fontSize(35).text('Application Form', 100, 100)
+    doc.fontSize(25).text('Application Number: ' + student.applicationNumber, 50, 150)
+    doc.fontSize(25).text('Student Name: ' + student.name, 50, 200)
+    doc.fontSize(25).text('Father Name: ' + student.fatherName, 50, 250)
+    doc.fontSize(25).text('Mother Name: ' + student.motherName, 50, 300)
+    doc.fontSize(25).text('Email: ' + student.email, 50, 350)
+    doc.fontSize(25).text('MobileNumber: ' + student.mobileNumber, 50, 400)
+    doc.fontSize(25).text('Date Of Birth: ' + student.dateOfBirth, 50, 450)
     console.log('Completed preparing the document')
     doc.save()
     doc.end()

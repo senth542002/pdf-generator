@@ -34,3 +34,5 @@ express --view=pug pdf-generator
 
  npm install chai-fs --save
  npm install --save-dev chai-files
+
+ example link: http://programmerblog.net/generate-pdf-using-nodejs/

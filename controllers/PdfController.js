@@ -6,13 +6,15 @@ var path = require('path')
 module.exports = {
   generate (req, res) {
     let pdfDoc = pdfGenerator.generate(req.body)
+    console.log("PDFDoc:"+pdfDoc.data);
     res.status(201)
     fs.readFile(path.resolve(__dirname, '../output.pdf'), function (err, data) {
       console.log('Sending back pdf document')
-      console.log('Data:' + data)
+      console.log('File Data:'+ data);
+      res.setHeader("X-Suggested-Filename", 'ApplicationForm.pdf')
       res.setHeader(
         'Content-disposition',
-        'inline; filename="ApplicationForm.pdf"'
+        'attachment; filename="ApplicationForm.pdf"'
       )
       res.contentType('application/pdf')
       res.sendFile(path.resolve(__dirname, '../output.pdf'))
