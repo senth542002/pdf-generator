@@ -32,11 +32,11 @@ describe('PDF Generator API Integration Tests', function () {
          "email": "Email Id",
          "mobileNumber": "Mobile Number",
          "dateOfBirth": "2019-07-14T13:34:00.000",
-         "applicationNumber": "116"
+         "applicationNumber": "116",
       }
 
       request(app)
-        .get('/api/generate')
+        .post('/api/generate')
         .send(data)
         .expect('Content-Type', /pdf/)
         .end(function (err, res) {
