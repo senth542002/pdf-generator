@@ -24,7 +24,7 @@
     "nodemon": "^1.19.1",
     "pdfkit": "^0.10.0",
     "prettier-standard": "^9.1.1",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "react-pdf": "^4.1.0",
     "supertest": "^4.0.2"
   },
